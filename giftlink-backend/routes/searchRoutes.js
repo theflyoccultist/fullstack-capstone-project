@@ -6,17 +6,17 @@ const connectToDatabase = require('../models/db');
 router.get('/', async (req, res, next) => {
     try {
         const db = await connectToDatabase();
-
         const collection = db.collection("gifts");
 
         // Initialize the query object
         let query = {};
 
+        // Check if the name exists and is not empty
         if (req.query.name>req.query.name && req.query.name.trim() !== '') {
             query.name = { $regex: req.query.name, $options: "i" }; // Using regex for partial match, case-insensitive
         }
 
-        // Task 3: Add other filters to the query
+        // Add other filters to the query
         if (req.query.category) {
             query.category = req.query.category;
         }
@@ -28,9 +28,8 @@ router.get('/', async (req, res, next) => {
             query.age_years = { $lte: parseInt(req.query.age_years) };
         }
 
-        // Task 4: Fetch filtered gifts using the find(query) method. Make sure to use await and store the result in the `gifts` constant
+        // Fetch filtered gifts
         const gifts = await collection.find(query).toArray();
-
         res.json(gifts);
     } catch (e) {
         next(e);
