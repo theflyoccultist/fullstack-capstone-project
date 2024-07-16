@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './DetailsPage.css';
+import { urlConfig } from '../../config';
 
 function DetailsPage() {
     const navigate = useNavigate();
@@ -18,7 +19,8 @@ function DetailsPage() {
         // get the gift to be rendered on the details page
         const fetchGift = async () => {
             try {
-                const response = await fetch(`${urlConfig.backendUrl}/api/gifts/${productId}`);
+                const url = `${urlConfig.backendUrl}/api/gifts/${productId}`
+                const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -34,7 +36,7 @@ function DetailsPage() {
         fetchGift();
         window.scrollTo(0,0);
 
-    }, [productId]);
+    }, [productId, navigate]);
 
 
     const handleBackClick = () => {
@@ -85,7 +87,6 @@ return (
                             <div className="no-image-available-large">No Image Available</div>
                         )}
                     </div>
-                    // Task 6: Display gift details
                     	<p><strong>Category:</strong> 
                             {gift.category}
 			            </p>

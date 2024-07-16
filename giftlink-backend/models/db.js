@@ -17,7 +17,7 @@ async function connectToDatabase() {
 
     await client.connect();
     dbInstance = client.db(dbName);
-    return dbInstance
+    return dbInstance;
 }
 
 module.exports = connectToDatabase;
