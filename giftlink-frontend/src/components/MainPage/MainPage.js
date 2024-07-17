@@ -1,5 +1,6 @@
     import React, { useState, useEffect } from 'react';
     import { useNavigate } from 'react-router-dom';
+    import {urlConfig} from '../../config';
     function MainPage() {
         const [gifts, setGifts] = useState([])
         const navigate = useNavigate();
@@ -7,7 +8,7 @@
             // fetch all gifts
             const fetchGifts = async () => {
                 try {
-                    let url = 'https://ydelahaije-3060.theiaopenshiftnext-0-labs-prod-theiaopenshift-4-tor01.proxy.cognitiveclass.ai/api/gifts'
+                    let url = `${urlConfig.backendUrl}/api/gifts`
                     const response = await fetch(url);
                     if (!response.ok) {
                         //something went wrong
