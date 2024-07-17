@@ -7,7 +7,7 @@
             // fetch all gifts
             const fetchGifts = async () => {
                 try {
-                    let url = 'https://ydelahaije-3060.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/gifts'
+                    let url = 'https://ydelahaije-3060.theiaopenshiftnext-0-labs-prod-theiaopenshift-4-tor01.proxy.cognitiveclass.ai/api/gifts'
                     const response = await fetch(url);
                     if (!response.ok) {
                         //something went wrong

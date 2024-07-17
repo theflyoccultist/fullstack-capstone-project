@@ -13,7 +13,7 @@ function SearchPage() {
         // fetch all products
         const fetchProducts = async () => {
             try {
-                let url = 'https://ydelahaije-3060.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/search'
+                let url = 'https://ydelahaije-3060.theiaopenshiftnext-0-labs-prod-theiaopenshift-4-tor01.proxy.cognitiveclass.ai/api/search'
                 console.log(url)
                 const response = await fetch(url);
                 if (!response.ok) {
@@ -31,7 +31,7 @@ function SearchPage() {
     }, []);
 
     const handleSearch = async () => {
-        const baseUrl = 'https://ydelahaije-3060.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/api/search?';
+        const baseUrl = 'https://ydelahaije-3060.theiaopenshiftnext-0-labs-prod-theiaopenshift-4-tor01.proxy.cognitiveclass.ai/api/search?';
         const queryParams = new URLSearchParams({
             name: searchQuery,
             age_years: ageRange,
