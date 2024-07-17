@@ -79,7 +79,7 @@ function LoginPage() {
                                 type="text"
                                 className="form-control"
                                 placeholder="Enter your password"
-                                value={email}
+                                value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             <span style={{color:'red', height:'.5cm', display:'block',fontStyle:'italic',fontSize:'12px'}}>{incorrect}</span>
