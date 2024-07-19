@@ -11,7 +11,6 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 
 function App() {
-    const navigate = useNavigate();
     return (
         <>
         <Navbar/>
