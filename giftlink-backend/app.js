@@ -15,6 +15,7 @@ const port = 3060;
 connectToDatabase().then(() => {
     pinoLogger.info('Connected to DB');
 })
+    .then(() => console.log('MongoDB connected'))
     .catch((e) => console.error('Failed to connect to DB', e));
 
 

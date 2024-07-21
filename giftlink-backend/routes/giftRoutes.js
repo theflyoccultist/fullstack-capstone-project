@@ -11,7 +11,9 @@ router.get('/', async (req, res, next) => {
         const collection = db.collection("gifts");
         const gifts = await collection.find({}).toArray();
         res.json(gifts);
+        console.log('Data fetched successfully');
     } catch (e) {
+        console.error('Error reading data source:', e);
         logger.console.error('oops something went wrong', e);
         next(e);
     }
